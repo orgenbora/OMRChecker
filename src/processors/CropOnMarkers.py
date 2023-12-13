@@ -123,7 +123,18 @@ class CropOnMarkers(ImagePreprocessor):
                 (50, 50, 50) if self.apply_erode_subtract else (155, 155, 155),
                 4,
             )
+            # Replace this block of code
             centres.append([pt[0] + w / 2, pt[1] + _h / 2])
+
+            # With this block of code
+            if k == 0:  # upper left quadrant
+                centres.append([pt[0], pt[1]])
+            elif k == 1:  # upper right quadrant
+                centres.append([pt[0] + w, pt[1]])
+            elif k == 2:  # lower left quadrant
+                centres.append([pt[0], pt[1] + _h])
+            elif k == 3:  # lower right quadrant
+                centres.append([pt[0] + w, pt[1] + _h])
             sum_t += max_t
 
         logger.info(quarter_match_log)

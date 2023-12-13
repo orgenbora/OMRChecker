@@ -307,34 +307,23 @@ class ImageInstanceOps:
                             )
                             cv2.rectangle(
                                 final_marked,
-                                (int(x + box_w / 12), int(y + box_h / 12)),
+                                (int(x - box_w / 12), int(y - box_h / 12)),
                                 (
-                                    int(x + box_w - box_w / 12),
-                                    int(y + box_h - box_h / 12),
+                                    int(x + box_w + box_w / 12),
+                                    int(y + box_h + box_h / 12),
                                 ),
-                                constants.CLR_DARK_GRAY,
+                                (0,0,255),
                                 3,
                             )
 
                             cv2.putText(
                                 final_marked,
                                 str(field_value),
-                                (x, y),
+                                (x + int(box_w / 10), y + int(box_h * 0.95)),  # Adjusted coordinates
                                 cv2.FONT_HERSHEY_SIMPLEX,
-                                constants.TEXT_SIZE,
-                                (20, 20, 10),
-                                int(1 + 3.5 * constants.TEXT_SIZE),
-                            )
-                        else:
-                            cv2.rectangle(
-                                final_marked,
-                                (int(x + box_w / 10), int(y + box_h / 10)),
-                                (
-                                    int(x + box_w - box_w / 10),
-                                    int(y + box_h - box_h / 10),
-                                ),
-                                constants.CLR_GRAY,
-                                -1,
+                                constants.TEXT_SIZE*1.5,
+                                (255, 255, 255),
+                                int(1 + 3 * constants.TEXT_SIZE),
                             )
 
                     for bubble in detected_bubbles:
@@ -426,7 +415,7 @@ class ImageInstanceOps:
             raise e
 
     @staticmethod
-    def draw_template_layout(img, template, shifted=True, draw_qvals=False, border=-1):
+    def draw_template_layout(img, template, shifted=True, draw_qvals=False, border=2):
         img = ImageUtils.resize_util(
             img, template.page_dimensions[0], template.page_dimensions[1]
         )
@@ -440,7 +429,7 @@ class ImageInstanceOps:
                     final_align,
                     (s[0] + shift, s[1]),
                     (s[0] + shift + d[0], s[1] + d[1]),
-                    constants.CLR_BLACK,
+                    constants.CLR_GRAY,
                     3,
                 )
             else:
@@ -448,17 +437,17 @@ class ImageInstanceOps:
                     final_align,
                     (s[0], s[1]),
                     (s[0] + d[0], s[1] + d[1]),
-                    constants.CLR_BLACK,
-                    3,
+                    constants.CLR_GRAY,
+                    1,
                 )
             for field_block_bubbles in field_block.traverse_bubbles:
                 for pt in field_block_bubbles:
                     x, y = (pt.x + field_block.shift, pt.y) if shifted else (pt.x, pt.y)
                     cv2.rectangle(
                         final_align,
-                        (int(x + box_w / 10), int(y + box_h / 10)),
-                        (int(x + box_w - box_w / 10), int(y + box_h - box_h / 10)),
-                        constants.CLR_GRAY,
+                        (int(x), int(y)),
+                        (int(x + box_w), int(y + box_h)),
+                        constants.CLR_BLACK,
                         border,
                     )
                     if draw_qvals:
@@ -481,8 +470,8 @@ class ImageInstanceOps:
                     field_block.name,
                     (int(s[0] + d[0] - text_in_px[0][0]), int(s[1] - text_in_px[0][1])),
                     cv2.FONT_HERSHEY_SIMPLEX,
-                    constants.TEXT_SIZE,
-                    constants.CLR_BLACK,
+                    constants.TEXT_SIZE*1.5,
+                    constants.CLR_BLACK/2,
                     4,
                 )
         return final_align

@@ -1,0 +1,15 @@
+{
+  "dimensions": {
+    "display_width": 1332,
+    "display_height": 2000,
+    "processing_width": 1332,
+    "processing_height": 2000
+  },
+  "threshold_params": {
+    "MIN_JUMP": 40
+  },
+  "outputs": {
+    "filter_out_multimarked_files": false,
+    "show_image_level": 0
+  }
+}

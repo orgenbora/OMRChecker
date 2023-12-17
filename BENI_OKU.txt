@@ -1,0 +1,38 @@
+KURULUM
+
+- Conda kurup ayrı bir envirionment ile çalışılabilir ama bilgisayarda sık kullanılan başka python programı vs. yoksa bir sorun değil kurmamak.
+
+- VS code kurmak faydalı olacaktır.
+
+- Sonrasında https://github.com/orgenbora/OMRChecker adresine giderek, oradaki kurulum adımları izlenebilir.
+
+- Repo'yu clone'lamak için https://github.com/orgenbora/OMRChecker adresine giderek sağ üstteki yeşil 'Code' a basılır ve açılan sayfada https://github.com/orgenbora/OMRChecker.git adresi kopyalanır.
+
+- İndirilmek istenen yere gidilerek git clone https://github.com/orgenbora/OMRChecker.git komutu command prompt ile çalıştırılır.
+
+- Sonrasında python3 -m pip install --user -r requirements.txt ile gerekli diğer kütüphaneler edinilir.
+
+
+PDF'TEN RESME GEÇİŞ
+
+- Taratılan pdf'leri png resim dosyalarına çevirmesi içinb xconvert kullanılabilir. Dikkat edilmesi gereken ayarlar kısmından çevirilecek fotonun kalitesi olacak. Öncelikle 'Output' sekmesinden PNG seçmek tavsiye edilir. Sonrasında 'Settings', "load format settings", 'read' kısmındaki 'PS/PDF' altında okuma çözünürlüğü 300 ya da üzeri seçilir. "https://www.xnview.com/en/xnconvert/"
+
+- Resme dönüştürüldükten sonra ters resim var mı diye kontrol etmek 800 kağıt için ~10dk aldı. Yapmak sonradan uğraşmaya göre daha kolay gibi.
+
+ANALİZ
+- Bu resimler  '\OMRChecker\inputs\PHYL_Final\Taramalar' dizinine kopyalanır. 'PHYL_Final' altındaki template son kullandığımız cevap anahatrı ile uyumlu. Onun değişmediği durumda aynısı kullanılabilir. 'PHYL_Final\Taramalar' altındaki 'config.json' dosyası da benzer bir amaç için orada.
+
+- OMRChecker dizinindeyken 'python main.py -i inputs\PHYL_Final' komutu çalıştırılır.
+
+- Notlandırmanın başlaması lazım. 5dk civarında ~700 kağıt okunuyor.
+
+- İşlemler bittiğinde '\OMRChecker\outputs\Taramalar' dosyası oluşturmuş ve sonuçları içine koymuş olmalı. Okuduğu resimlerde işaretli gördüğü yerleri kontrol etmek için 'CheckedOMRs' dosyasına bakılabilir. Oluşturduğu csv dosyası 'Results' altında duruyor. 
+
+NOTLANDIRMA
+- Bu dosyayı açıp tüm içeriğini 'OMR_Notlandirici.xlsx' 'in 'OMR Ciktisi' sekmesine yapıştırın. Versiyonlarına göre cevap anahtarlarını 'Cevap Anahtarı' sekmesine alt alta girin. Eğer sorularda birden çok cevabın doğru olduğu durumlar varsa cevap anahtarına 'ABC' şeklinde yazabilirsiniz. Soruyu iptal etmek için tüm seçenekleri bir arada ilgili hücreye 'ABCDE' şeklinde yazın. 
+
+- 'Notlayici' sekmesinde sonuçları görünteleyebiliyor olmalısınız. Yukarıdaki mavi boyalı kısımlar sizin dolduracağınız kısımlar.
+
+- 'Notlayici' sekmesinde sorunlu satırlar kırmızı ile işaretleniyor ve sorunu yaratan hücre turuncuya boyanıyor. Böylece sorunları hızlı bir şekilde bulabilirsiniz.
+
+- İki adet öğrenci listelerini ekleyebileceğiniz sekme var solda. Burada eğer sütunlarda değişiklik olursa elle değiştirmek gerekebilir ama hazır formüllerdeki adresleri değiştirmek yeterli olmalı. Öğrencileri numaraları üzerinden eşleyerek notlarını girmeyi otomatik yapabilirsiniz.

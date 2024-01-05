@@ -1,24 +1,32 @@
 CEVAP KAĞIDI
 
-- Son kullanılan cevap kağıdı örneği pdf ve word halinde 'inputs\PHYL_Final' dosyasına eklendi. Değiştirilmediği sürece aynı klasördeki template.json ile çalışılabilir. 
+- Son kullanılan cevap kağıdı örneği pdf ve word halinde 'inputs\PHYL_Final' dosyasına eklendi. Değiştirilmediği sürece aynı klasördeki
+  template.json ile çalışılabilir. 
 
 - Word dosyasının düzgün görüntülenebilmesi için OMR Font'u yüklenmelidir. Bunun için aynı dosyadaki 'OMR Circles.ttf' kullanılabilir.
 
-- Değiştirilmesi durumunda python main.py -i inputs\PHYL_Final --setLayout yardımıyla template.json'da gerekli değişiklikler yapılabilir. Bubble'ların konumlarını pixel olarak template.json'a vereceğiniz için GIMP benzeri daha gelişkin bir resim görüntüleyici ile çalışarak hangi pixele konacaklarını belirlemek kolaylaştırılabilir. Template oluştururken öğrencilerin taranmış cevap kağıtlarını kullanmak daha iyi oluyor çünkü tarayıcının özelliklerine göre marker'lardan uyguladığı kesim aynı ama template pdf'indekinden biraz farklı olabiliyor. 
+- Değiştirilmesi durumunda "python main.py -i inputs\PHYL_Final --setLayout" yardımıyla template.json'da gerekli değişiklikler yapılabilir.
+  Bubble'ların konumlarını pixel olarak template.json'a vereceğiniz için GIMP benzeri daha gelişkin bir resim görüntüleyici ile çalışarak
+  hangi pixele konacaklarını belirlemek kolaylaştırılabilir. Template oluştururken öğrencilerin taranmış cevap kağıtlarını kullanmak daha 
+  iyi oluyor çünkü tarayıcının özelliklerine göre marker'lardan uyguladığı kesim aynı ama template pdf'indekinden biraz farklı olabiliyor. 
 
-- Bu fork'a ihtiyaç marker'daki kesim algoritmasının öğrenci numarasının son hanesini kesmesi dolayısıyla oldu. Eğer cevap kağıdı uygun değiştirilse orijinal repo'dan indirilerek direkt çalıştırılabilir olmalı. Yine de yapılmış commit'lere bakarak istenen kısımlar kopyalanabilir. Mesela analiz sonunda oluşturulan resimler daha okunaklı hale getirilmiştir. 
+- Bu fork'a ihtiyaç marker'daki kesim algoritmasının öğrenci numarasının son hanesini kesmesi dolayısıyla oldu. Eğer cevap kağıdı uygun 
+  değiştirilse orijinal repo'dan indirilerek direkt çalıştırılabilir olmalı. Yine de yapılmış commit'lere bakarak istenen kısımlar 
+  kopyalanabilir. Mesela analiz sonunda oluşturulan resimler daha okunaklı hale getirilmiştir. 
 
 - Ayrı cevap anahtarı versiyonlarını da desteklemediği için 'OMR_Notlandirici.xlsx' de repo'ya eklenmiştir.
 
 KURULUM
 
-- Conda kurup ayrı bir envirionment ile çalışılabilir ama bilgisayarda sık kullanılan başka python programı vs. yoksa bir sorun değil kurmamak.
+- Conda kurup ayrı bir envirionment ile çalışılabilir ama bilgisayarda sık kullanılan başka python programı vs. yoksa bir sorun değil
+  kurmamak.
 
 - VS code kurmak faydalı olacaktır.
 
 - Sonrasında https://github.com/orgenbora/OMRChecker adresine giderek, oradaki kurulum adımları izlenebilir.
 
-- Repo'yu clone'lamak için https://github.com/orgenbora/OMRChecker adresine giderek sağ üstteki yeşil 'Code' a basılır ve açılan sayfada https://github.com/orgenbora/OMRChecker.git adresi kopyalanır.
+- Repo'yu clone'lamak için https://github.com/orgenbora/OMRChecker adresine giderek sağ üstteki yeşil 'Code' a basılır ve açılan sayfada
+  https://github.com/orgenbora/OMRChecker.git adresi kopyalanır.
 
 - İndirilmek istenen yere gidilerek git clone https://github.com/orgenbora/OMRChecker.git komutu command prompt ile çalıştırılır.
 
@@ -27,24 +35,34 @@ KURULUM
 
 PDF'TEN RESME GEÇİŞ
 
-- Taratılan pdf'leri png resim dosyalarına çevirmesi içinb xconvert kullanılabilir. Dikkat edilmesi gereken ayarlar kısmından çevirilecek fotonun kalitesi olacak. Öncelikle 'Output' sekmesinden PNG seçmek tavsiye edilir. Sonrasında 'Settings', "load format settings", 'read' kısmındaki 'PS/PDF' altında okuma çözünürlüğü 300 ya da üzeri seçilir. "https://www.xnview.com/en/xnconvert/"
+- Taratılan pdf'leri png resim dosyalarına çevirmesi içinb XnConvert kullanılabilir. Dikkat edilmesi gereken ayarlar kısmından çevirilecek 
+  fotonun kalitesi olacak. Öncelikle 'Output' sekmesinden PNG seçmek tavsiye edilir. Sonrasında 'Settings', "load format settings", 'read' 
+  kısmındaki 'PS/PDF' altında okuma çözünürlüğü 300 ya da üzeri seçilir. "https://www.xnview.com/en/xnconvert/"
 
 - Resme dönüştürüldükten sonra ters resim var mı diye kontrol etmek 800 kağıt için ~10dk aldı. Yapmak sonradan uğraşmaya göre daha kolay gibi.
 
 ANALİZ
-- Bu resimler  '\OMRChecker\inputs\PHYL_Final\Taramalar' dizinine kopyalanır. 'PHYL_Final' altındaki template son kullandığımız cevap anahatrı ile uyumlu. Onun değişmediği durumda aynısı kullanılabilir. 'PHYL_Final\Taramalar' altındaki 'config.json' dosyası da benzer bir amaç için orada.
+- Bu resimler  '\OMRChecker\inputs\PHYL_Final\Taramalar' dizinine kopyalanır. 'PHYL_Final' altındaki template son kullandığımız cevap 
+  anahatrı ile uyumlu. Onun değişmediği durumda aynısı kullanılabilir. 'PHYL_Final\Taramalar' altındaki 'config.json' dosyası da benzer bir 
+  amaç için orada.
 
-- OMRChecker dizinindeyken 'python main.py -i inputs\PHYL_Final' komutu çalıştırılır.
+- OMRChecker dizinindeyken "python main.py -i inputs\PHYL_Final" komutu çalıştırılır. Farklı bir dosyadaysanız template ve config json 
+  dosyalarını da ekledikten sonra bu komuttaki PHYL_Final yerine kendi dosyanızın adını girebilirsiniz.
 
 - Notlandırmanın başlaması lazım. 5dk civarında ~700 kağıt okunuyor.
 
-- İşlemler bittiğinde '\OMRChecker\outputs\Taramalar' dosyası oluşturmuş ve sonuçları içine koymuş olmalı. Okuduğu resimlerde işaretli gördüğü yerleri kontrol etmek için 'CheckedOMRs' dosyasına bakılabilir. Oluşturduğu csv dosyası 'Results' altında duruyor. 
+- İşlemler bittiğinde '\OMRChecker\outputs\Taramalar' dosyası oluşturmuş ve sonuçları içine koymuş olmalı. Okuduğu resimlerde işaretli gördüğü 
+  yerleri kontrol etmek için 'CheckedOMRs' dosyasına bakılabilir. Oluşturduğu csv dosyası 'Results' altında duruyor. 
 
 NOTLANDIRMA
-- Bu dosyayı açıp tüm içeriğini 'OMR_Notlandirici.xlsx' 'in 'OMR Ciktisi' sekmesine yapıştırın. Versiyonlarına göre cevap anahtarlarını 'Cevap Anahtarı' sekmesine alt alta girin. Eğer sorularda birden çok cevabın doğru olduğu durumlar varsa cevap anahtarına 'ABC' şeklinde yazabilirsiniz. Soruyu iptal etmek için tüm seçenekleri bir arada ilgili hücreye 'ABCDE' şeklinde yazın. 
+- Bu dosyayı açıp tüm içeriğini 'OMR_Notlandirici.xlsx' 'in 'OMR Ciktisi' sekmesine yapıştırın. Versiyonlarına göre cevap anahtarlarını 
+  'Cevap Anahtarı' sekmesine alt alta girin. Eğer sorularda birden çok cevabın doğru olduğu durumlar varsa cevap anahtarına 'ABC' şeklinde 
+  yazabilirsiniz. Soruyu iptal etmek için tüm seçenekleri bir arada ilgili hücreye 'ABCDE' şeklinde yazın. 
 
 - 'Notlayici' sekmesinde sonuçları görünteleyebiliyor olmalısınız. Yukarıdaki mavi boyalı kısımlar sizin dolduracağınız kısımlar.
 
-- 'Notlayici' sekmesinde sorunlu satırlar kırmızı ile işaretleniyor ve sorunu yaratan hücre turuncuya boyanıyor. Böylece sorunları hızlı bir şekilde bulabilirsiniz.
+- 'Notlayici' sekmesinde sorunlu satırlar kırmızı ile işaretleniyor ve sorunu yaratan hücre turuncuya boyanıyor. Böylece sorunları hızlı bir 
+  şekilde bulabilirsiniz.
 
-- İki adet öğrenci listelerini ekleyebileceğiniz sekme var solda. Burada eğer sütunlarda değişiklik olursa elle değiştirmek gerekebilir ama hazır formüllerdeki adresleri değiştirmek yeterli olmalı. Öğrencileri numaraları üzerinden eşleyerek notlarını girmeyi otomatik yapabilirsiniz.
+- İki adet öğrenci listelerini ekleyebileceğiniz sekme var solda. Burada eğer sütunlarda değişiklik olursa elle değiştirmek gerekebilir ama hazır
+ s formüllerdeki adresleri değiştirmek yeterli olmalı. Öğrencileri numaraları üzerinden eşleyerek notlarını girmeyi otomatik yapabilirsiniz.

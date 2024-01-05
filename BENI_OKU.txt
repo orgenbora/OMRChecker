@@ -65,4 +65,4 @@ NOTLANDIRMA
   şekilde bulabilirsiniz.
 
 - İki adet öğrenci listelerini ekleyebileceğiniz sekme var solda. Burada eğer sütunlarda değişiklik olursa elle değiştirmek gerekebilir ama hazır
- s formüllerdeki adresleri değiştirmek yeterli olmalı. Öğrencileri numaraları üzerinden eşleyerek notlarını girmeyi otomatik yapabilirsiniz.
+  formüllerdeki adresleri değiştirmek yeterli olmalı. Öğrencileri numaraları üzerinden eşleyerek notlarını girmeyi otomatik yapabilirsiniz.

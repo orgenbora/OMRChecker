@@ -3,7 +3,8 @@ CEVAP KAĞIDI
 - Son kullanılan cevap kağıdı örneği pdf ve word halinde 'inputs\PHYL_Final' dosyasına eklendi. Değiştirilmediği sürece aynı klasördeki
   template.json ile çalışılabilir. 
 
-- Word dosyasının düzgün görüntülenebilmesi için OMR Font'u yüklenmelidir. Bunun için aynı dosyadaki 'OMR Circles.ttf' kullanılabilir.
+- Word dosyasının düzgün görüntülenebilmesi için OMR Font'u yüklenmelidir. Bunun için aynı dosyadaki 'OMR Circles.ttf' kullanılabilir.  
+  Çift tıklayıp açtıktan sonra çıkan pencerede, sol üstteki yükleye basarak yüklemesi yapılabilir.
 
 - Değiştirilmesi durumunda "python main.py -i inputs\PHYL_Final --setLayout" yardımıyla template.json'da gerekli değişiklikler yapılabilir.
   Bubble'ların konumlarını pixel olarak template.json'a vereceğiniz için GIMP benzeri daha gelişkin bir resim görüntüleyici ile çalışarak

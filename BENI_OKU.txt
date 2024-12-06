@@ -41,7 +41,7 @@ PDF'TEN RESME GEÇİŞ
   fotonun kalitesi olacak. Öncelikle 'Output' sekmesinden PNG seçmek tavsiye edilir. Sonrasında 'Settings', "load format settings", 'read' 
   kısmındaki 'PS/PDF' altında okuma çözünürlüğü 300 ya da üzeri seçilir. "https://www.xnview.com/en/xnconvert/"
 
-- Resme dönüştürüldükten sonra ters resim var mı diye kontrol etmek 800 kağıt için ~10dk aldı. Yapmak sonradan uğraşmaya göre daha kolay gibi.
+- Resme dönüştürüldükten sonra ters resim var mı diye kontrol etmek 800 kağıt için ~10dk aldı. Önden düzeltmek sonradan uğraşmaya göre daha kolay gibi.
 
 ANALİZ
 - Bu resimler  '\OMRChecker\inputs\PHYL_Final\Taramalar' dizinine kopyalanır. 'PHYL_Final' altındaki template son kullandığımız cevap 

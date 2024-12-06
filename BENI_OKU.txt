@@ -31,7 +31,7 @@ KURULUM
 
 - İndirilmek istenen yere gidilerek git clone https://github.com/orgenbora/OMRChecker.git komutu command prompt ile çalıştırılır.
 
-- Sonrasında python3 -m pip install --user -r requirements.txt ile gerekli diğer kütüphaneler edinilir. Python versiyonuna göre python yok 
+- Sonrasında indirilen dosya dizininde python3 -m pip install --user -r requirements.txt ile gerekli diğer kütüphaneler edinilir. Python versiyonuna göre python yok 
 hatası alınabilir. Bu durumda pyhton3 yerine python yazarak tekrar denendiğinde kodun sorunsuz bir şekilde çalışması beklenir. 
 
 

@@ -22,7 +22,7 @@ KURULUM
 - Conda kurup ayrı bir envirionment ile çalışılabilir ama bilgisayarda sık kullanılan başka python programı vs. yoksa bir sorun değil
   kurmamak.
 
-- VS code kurmak faydalı olacaktır.
+- VS code kurmak faydalı olacaktır. Kurulum bittikten sonra yoksa python kurulumu direkt "VS Code" extensions üzerinden yapılabilir.
 
 - Sonrasında https://github.com/orgenbora/OMRChecker adresine giderek, oradaki kurulum adımları izlenebilir.
 
@@ -31,15 +31,19 @@ KURULUM
 
 - İndirilmek istenen yere gidilerek git clone https://github.com/orgenbora/OMRChecker.git komutu command prompt ile çalıştırılır.
 
-- Sonrasında indirilen dosya dizininde python3 -m pip install --user -r requirements.txt ile gerekli diğer kütüphaneler edinilir. Python versiyonuna göre python yok 
-hatası alınabilir. Bu durumda pyhton3 yerine python yazarak tekrar denendiğinde kodun sorunsuz bir şekilde çalışması beklenir. 
+- Sonrasında indirilen dosya dizininde, VS Code command prompt paneline "python3 -m pip install --user -r requirements.txt" yazılarak 
+gerekli diğer kütüphaneler edinilir. Burada önemli bir not: powershell alışılagelmiş pek çok komutu kabul etmiyor.terminal panelinden yeni 
+Command Prompt terminali açtırarak kodları buraya yazmanız tavsiye edilir. Python versiyonuna göre python yok hatası alınabilir. Bu durumda 
+pyhton3 yerine python yazarak tekrar denendiğinde kodun sorunsuz bir şekilde çalışması beklenir. 
 
 
 PDF'TEN RESME GEÇİŞ
 
-- Taratılan pdf'leri png resim dosyalarına çevirmesi içinb XnConvert kullanılabilir. Dikkat edilmesi gereken ayarlar kısmından çevirilecek 
-  fotonun kalitesi olacak. Öncelikle 'Output' sekmesinden PNG seçmek tavsiye edilir. Sonrasında 'Settings', "load format settings", 'read' 
-  kısmındaki 'PS/PDF' altında okuma çözünürlüğü 300 ya da üzeri seçilir. "https://www.xnview.com/en/xnconvert/"
+- Taratılan pdf'leri png resim dosyalarına çevirmesi içinb XnConvert kullanılabilir ancak öncesinde PDF okuyabilmesi için açık kaynak kodlu 
+  "ghostscript" yüklenmelidir. Link: https://www.ghostscript.com/releases/gsdnld.html 
+- Dikkat edilmesi gereken ayarlar kısmından çevirilecek fotonun kalitesi olacak. Öncelikle 'Output' sekmesinden PNG seçmek tavsiye edilir. 
+  Sonrasında 'Settings', "load format settings", 'read'  kısmındaki 'PS/PDF' altında okuma çözünürlüğü 300 ya da üzeri seçilir. 
+  "https://www.xnview.com/en/xnconvert/"
 
 - Resme dönüştürüldükten sonra ters resim var mı diye kontrol etmek 800 kağıt için ~10dk aldı. Önden düzeltmek sonradan uğraşmaya göre daha kolay gibi.
 
@@ -60,6 +64,9 @@ NOTLANDIRMA
 - Bu dosyayı açıp tüm içeriğini 'OMR_Notlandirici.xlsx' 'in 'OMR Ciktisi' sekmesine yapıştırın. Versiyonlarına göre cevap anahtarlarını 
   'Cevap Anahtarı' sekmesine alt alta girin. Eğer sorularda birden çok cevabın doğru olduğu durumlar varsa cevap anahtarına 'ABC' şeklinde 
   yazabilirsiniz. Soruyu iptal etmek için tüm seçenekleri bir arada ilgili hücreye 'ABCDE' şeklinde yazın. 
+
+- 'OMR_Notlandirici.xlsx' maksimum 10 farklı seti, toplam 1500 sınav kağıdını ve 100 soruyu destekliyor. Genişletmek gerekirse excelde 
+  değişiklik yapmak gerekir.
 
 - 'Notlayici' sekmesinde sonuçları görünteleyebiliyor olmalısınız. Yukarıdaki mavi boyalı kısımlar sizin dolduracağınız kısımlar.
 
